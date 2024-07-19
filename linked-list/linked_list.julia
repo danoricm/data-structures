@@ -1,0 +1,42 @@
+# linked_list.julia
+struct Node
+    data::Int
+    next::Union{Nothing, Node}
+end
+
+mutable struct LinkedList
+    head::Union{Nothing, Node}
+
+    function LinkedList()
+        return new(nothing)
+    end
+
+    function append(self::LinkedList, data::Int)
+        new_node = Node(data, nothing)
+        if self.head === nothing
+            self.head = new_node
+        else
+            current = self.head
+            while current.next !== nothing
+                current = current.next
+            end
+            current.next = new_node
+        end
+    end
+
+    function print_list(self::LinkedList)
+        current = self.head
+        while current !== nothing
+            print(current.data, " ")
+            current = current.next
+        end
+        println()
+    end
+end
+
+llist = LinkedList()
+llist.append(1)
+llist.append(2)
+llist.append(3)
+llist.append(4)
+llist.print_list()

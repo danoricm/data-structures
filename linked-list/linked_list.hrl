@@ -1,0 +1,2 @@
+% linked_list.hrl
+-define(ARRAY, [1, 2, 3, 4, 5]).
