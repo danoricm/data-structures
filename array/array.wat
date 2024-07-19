@@ -1,0 +1,17 @@
+;; array.wat
+(module
+  (import "env" "print_i32" (func $print_i32 (param i32)))
+  (func (export "main")
+    (local $arr i32 i32 i32 i32 i32)
+    (local.set $arr (i32.const 1))
+    (local.set (i32.add $arr (i32.const 4)) (i32.const 2))
+    (local.set (i32.add $arr (i32.const 8)) (i32.const 3))
+    (local.set (i32.add $arr (i32.const 12)) (i32.const 4))
+    (local.set (i32.add $arr (i32.const 16)) (i32.const 5))
+    (call $print_i32 (local.get $arr))
+    (call $print_i32 (local.get (i32.add $arr (i32.const 4))))
+    (call $print_i32 (local.get (i32.add $arr (i32.const 8))))
+    (call $print_i32 (local.get (i32.add $arr (i32.const 12))))
+    (call $print_i32 (local.get (i32.add $arr (i32.const 16))))
+  )
+)

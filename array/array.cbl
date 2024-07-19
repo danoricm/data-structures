@@ -1,0 +1,13 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. ArrayExample.
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       01 ARR PIC 9(1) OCCURS 5 TIMES VALUE '1 2 3 4 5'.
+       PROCEDURE DIVISION.
+           DISPLAY "Array elements are: " WITH NO ADVANCING.
+           PERFORM VARYING I FROM 1 BY 1 UNTIL I > 5
+               DISPLAY ARR(I) WITH NO ADVANCING
+               DISPLAY " " WITH NO ADVANCING
+           END-PERFORM.
+           DISPLAY "".
+           STOP RUN.

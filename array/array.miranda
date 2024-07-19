@@ -1,0 +1,2 @@
+|| array.miranda
+main = putStrLn ("Array elements are: " ++ show [1, 2, 3, 4, 5])

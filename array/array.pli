@@ -1,0 +1,11 @@
+/* array.pli */
+DCL 1 ARR BASED,
+        2 ELEM (5) FIXED DECIMAL(5, 0);
+DCL I FIXED DECIMAL(5, 0);
+
+ARR.ELEM = (1, 2, 3, 4, 5);
+PUT SKIP LIST('Array elements are: ');
+
+DO I = 1 TO 5;
+    PUT SKIP LIST(ELEM(I));
+END;
